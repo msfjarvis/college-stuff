@@ -1,4 +1,4 @@
-name: Test all languages
+name: Rust
 on: [push]
 jobs:
   test:
@@ -13,5 +13,4 @@ jobs:
       with:
         rust-version: ${{ matrix.rust }}
     - uses: actions/checkout@master
-    - name: Test Rust code
-      run: cd rust && cargo test
+    - run: cd rust && cargo test
