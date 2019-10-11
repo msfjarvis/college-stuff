@@ -15,7 +15,11 @@ fn main() {
     println!("Queue implementation");
     let mut queue = Queue::default();
     queue.enqueue(1);
+    assert!(!queue.is_empty());
+    assert!(!queue.is_full());
     println!("{}", queue.peek());
     queue.dequeue();
     queue.dequeue();
+    assert!(queue.is_empty());
+    assert!(!queue.is_full());
 }

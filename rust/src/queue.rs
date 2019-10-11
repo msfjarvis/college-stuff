@@ -42,4 +42,12 @@ impl Queue {
     pub fn peek(&self) -> i32 {
         self.queue[self.front]
     }
+
+    pub fn is_full(&self) -> bool {
+        self.front == self.capacity - 1
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.front == self.rear
+    }
 }
