@@ -15,13 +15,17 @@ fn main() {
     println!("Queue implementation");
     let mut queue = Queue::default();
     queue.enqueue(1);
-    assert!(!queue.is_empty());
-    assert!(!queue.is_full());
-    println!("{}", queue.peek());
-    queue.dequeue();
-    queue.dequeue();
-    assert!(queue.is_empty());
-    assert!(!queue.is_full());
+    println!("front: {}", queue.rear());
+    println!("rear: {}", queue.front());
+    queue.enqueue(2);
+    println!("front: {}", queue.rear());
+    println!("rear: {}", queue.front());
+    println!("Successfully dequeued: {}", queue.dequeue());
+    println!("front: {}", queue.rear());
+    println!("rear: {}", queue.front());
+    println!("Successfully dequeued: {}", queue.dequeue());
+    println!("front: {}", queue.rear());
+    println!("rear: {}", queue.front());
 }
 
 #[cfg(test)]
@@ -38,7 +42,7 @@ mod tests {
         assert!(!queue.is_empty());
         queue.dequeue();
         assert!(queue.is_empty());
-        for i in 1..queue.capacity {
+        for i in 0..queue.capacity {
             assert!(!queue.is_full());
             queue.enqueue(i.try_into().unwrap());
         }
