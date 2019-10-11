@@ -1,8 +1,8 @@
 mod queue;
 mod stack;
 
-use stack::Stack;
 use queue::Queue;
+use stack::Stack;
 
 fn main() {
     println!("Stack implementation");
