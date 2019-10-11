@@ -1,5 +1,13 @@
 name: Rust
-on: [push]
+on:
+  push:
+    paths:
+      - 'rust/**'
+      - '.github/workflows/rust.yml'
+  pull_request:
+    paths:
+      - 'rust/**'
+      - '.github/workflows/rust.yml'
 jobs:
   test:
     runs-on: ${{ matrix.os }}
