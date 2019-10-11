@@ -23,3 +23,25 @@ fn main() {
     assert!(queue.is_empty());
     assert!(!queue.is_full());
 }
+
+#[cfg(test)]
+mod tests {
+
+    use super::queue::Queue;
+    use std::convert::TryInto;
+
+    #[test]
+    fn test_queue_enqueue() {
+        let mut queue = Queue::default();
+        assert!(queue.is_empty());
+        queue.enqueue(1);
+        assert!(!queue.is_empty());
+        queue.dequeue();
+        assert!(queue.is_empty());
+        for i in 1..queue.capacity {
+            assert!(!queue.is_full());
+            queue.enqueue(i.try_into().unwrap());
+        }
+        assert!(queue.is_full());
+    }
+}

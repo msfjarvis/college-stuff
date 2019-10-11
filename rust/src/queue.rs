@@ -1,7 +1,7 @@
 pub struct Queue {
     front: usize,
     rear: usize,
-    capacity: usize,
+    pub capacity: usize,
     queue: [i32; 10],
 }
 
