@@ -33,7 +33,7 @@ mod tests {
     use std::convert::TryInto;
 
     #[test]
-    fn test_queue_enqueue() {
+    fn test_queue() {
         let mut queue = Queue::default();
         assert!(queue.is_empty());
         queue.enqueue(1);
