@@ -30,7 +30,6 @@ func (s *Stack) Pop() int {
 		return item
 	}
 	item, s.Items = s.Items[s.Top], s.Items[:s.Top]
-
 	s.Top = s.Top - 1
 	return item
 }
@@ -40,6 +39,5 @@ func (s *Stack) Peek() int {
 		fmt.Println("Stack underflow!")
 		return 0
 	}
-
 	return s.Items[s.Top]
 }
