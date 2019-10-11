@@ -6,7 +6,7 @@ on:
       - '.github/workflows/go.yml'
   pull_request:
     paths:
-      - 'python/**'
+      - 'go/**'
       - '.github/workflows/go.yml'
 jobs:
   test:
