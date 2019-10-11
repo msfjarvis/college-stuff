@@ -14,4 +14,4 @@ jobs:
         rust-version: ${{ matrix.rust }}
     - uses: actions/checkout@master
     - name: Test Rust code
-      run: cd rust && cargo run --release
+      run: cd rust && cargo test
