@@ -2,7 +2,9 @@
 
 #include "conio.h"
 #include <iostream>
+#ifdef _WIN32
 #include <process.h>
+#endif
 
 using namespace std;
 
