@@ -30,6 +30,7 @@ fn main() {
 mod tests {
 
     use super::queue::Queue;
+    use super::stack::Stack;
     use std::convert::TryInto;
 
     #[test]
@@ -45,5 +46,18 @@ mod tests {
             queue.enqueue(i.try_into().unwrap());
         }
         assert!(queue.is_full());
+    }
+
+    #[test]
+    fn test_stack() {
+        let mut stack = Stack::default();
+        stack.push(1);
+        assert_eq!(stack.peek(), 1);
+        println!("{} popped from stack", stack.pop());
+        assert_ne!(stack.peek(), 1);
+        for i in 0..stack.size {
+            stack.push(i.try_into().unwrap());
+        }
+        assert_eq!(stack.peek(), stack.size - 1);
     }
 }
