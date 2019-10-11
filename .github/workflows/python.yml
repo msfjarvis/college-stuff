@@ -21,4 +21,4 @@ jobs:
       with:
         python-version: ${{ matrix.python }}
     - uses: actions/checkout@master
-    - run: cd python && python main.py
+    - run: cd python && python tests.py
