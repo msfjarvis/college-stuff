@@ -1,5 +1,7 @@
-#include <conio.h>
+#include "conio.h"
 #include <stdio.h>
+#include <stdlib.h>
+
 #define max_size 5
 int queue[max_size], front = -1, rear = -1;
 
@@ -7,7 +9,7 @@ void insert();
 void del();
 void display();
 
-void main() {
+int main() {
     int choice;
     do {
 
@@ -37,6 +39,7 @@ void main() {
             break;
         }
     } while (choice != 4);
+    return 0;
 }
 void insert() //  Inserting an element into the queue
 {

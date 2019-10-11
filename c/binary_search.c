@@ -1,6 +1,6 @@
-#include <conio.h>
+#include "conio.h"
 #include <stdio.h>
-void main() {
+int main() {
     clrscr();
     int n, i, arr[10], search, first, last, middle;
     printf("Enter total number of elements :");
@@ -29,4 +29,5 @@ void main() {
         printf("Not found! %d is not present in the list.", search);
     }
     getch();
+    return 0;
 }

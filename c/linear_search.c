@@ -1,6 +1,6 @@
-#include <conio.h>
+#include "conio.h"
 #include <stdio.h>
-void main() {
+int main() {
     int array[10];
     int i, key, found = 0;
 
@@ -26,4 +26,5 @@ void main() {
     else
         printf("Element is not present in the array\n");
     getch();
+    return 0;
 }

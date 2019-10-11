@@ -1,4 +1,4 @@
-#include <conio.h>
+#include "conio.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 5
@@ -15,7 +15,7 @@ void display();
 int isEmpty();
 int isFull();
 
-void main() {
+int main() {
     int choice, item;
     while (1) {
         printf("\n\n1.Insert at the front end\n");
@@ -57,6 +57,7 @@ void main() {
         printf("\nfront = %d, rear =%d\n", front, rear);
         display();
     }
+    return 0;
 }
 
 void insert_frontEnd(int item) {

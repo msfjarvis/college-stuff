@@ -13,7 +13,7 @@ int peek();
 int isEmpty();
 int isFull();
 
-void main() {
+int main() {
     int choice, item;
     while (1) {
         printf("\n1.Insert\n");
@@ -45,6 +45,7 @@ void main() {
             printf("\nWrong choice!\n");
         }
     }
+    return 0;
 }
 
 void insert(int item) {
