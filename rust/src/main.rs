@@ -12,20 +12,18 @@ fn main() {
     stack.pop();
     stack.pop();
 
+    println!("");
+
     println!("Queue implementation");
     let mut queue = Queue::default();
     queue.enqueue(1);
     println!("front: {}", queue.rear());
     println!("rear: {}", queue.front());
     queue.enqueue(2);
+    queue.dequeue();
     println!("front: {}", queue.rear());
     println!("rear: {}", queue.front());
-    println!("Successfully dequeued: {}", queue.dequeue());
-    println!("front: {}", queue.rear());
-    println!("rear: {}", queue.front());
-    println!("Successfully dequeued: {}", queue.dequeue());
-    println!("front: {}", queue.rear());
-    println!("rear: {}", queue.front());
+    println!("Successfully dequeued {}", queue.dequeue());
 }
 
 #[cfg(test)]
