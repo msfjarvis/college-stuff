@@ -1,0 +1,20 @@
+name: C
+on:
+  push:
+    paths:
+      - 'c/**'
+      - '.github/workflows/c.yml'
+  pull_request:
+    paths:
+      - 'c/**'
+      - '.github/workflows/c.yml'
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+
+    steps:
+      - uses: actions/checkout@master
+      - run: cd c && make
