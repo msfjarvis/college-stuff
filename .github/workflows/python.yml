@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]
         python: [ '3.6', '3.7' ]
 
     steps:
@@ -21,4 +21,4 @@ jobs:
       with:
         python-version: ${{ matrix.python }}
     - uses: actions/checkout@master
-    - run: cd python && python tests.py
+    - run: cd python && pip install -r requirements.txt && black --check *.py && python tests.py

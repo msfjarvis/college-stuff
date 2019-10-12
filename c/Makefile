@@ -1,9 +1,12 @@
 format:
-	clang-format -i binary_search.c  circular_queue.c  de_queue.c  linear_queue.c  linear_search.c conio.h
+	clang-format -i *.c conio.h
 
 %.out: %.c
-	clang $< -o $@
+	clang -Wall -Werror $< -o $@
 
 build:	$(addsuffix .out, $(basename $(wildcard *.c)))
+
+clean:
+	rm -f *.out
 
 .DEFAULT_GOAL := build
