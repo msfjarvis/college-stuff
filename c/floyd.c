@@ -4,7 +4,7 @@
 void print_floyd(int);
 
 int main() {
-    int n, i, c, a = 1;
+    int n = 1;
 
     printf("Input number of rows of Floyd's triangle to print\n");
     scanf("%d", &n);

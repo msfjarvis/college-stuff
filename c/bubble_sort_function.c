@@ -4,7 +4,7 @@
 void bubble_sort(long[], long);
 
 int main() {
-    long array[100], n, c, d, swap;
+    long array[100], n, c;
 
     printf("Enter number of elements\n");
     scanf("%ld", &n);

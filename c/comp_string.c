@@ -1,16 +1,18 @@
 // String comparison C program
 #include <stdio.h>
 
+#define MAX_LEN 1000
+
 int compare_strings(char[], char[]);
 
 int main() {
-    char a[1000], b[1000];
+    char a[MAX_LEN], b[MAX_LEN];
 
     printf("Input a string\n");
-    gets(a);
+    fgets(a, MAX_LEN, stdin);
 
     printf("Input a string\n");
-    gets(b);
+    fgets(b, MAX_LEN, stdin);
 
     if (compare_strings(a, b) == 0)
         printf("Equal strings.\n");
