@@ -2,7 +2,7 @@ format:
 	clang-format -i *.c conio.h
 
 %.out: %.c
-	clang $< -o $@
+	clang -Wall -Werror $< -o $@
 
 build:	$(addsuffix .out, $(basename $(wildcard *.c)))
 
