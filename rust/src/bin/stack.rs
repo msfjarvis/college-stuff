@@ -50,3 +50,30 @@ impl Stack {
         n.try_into().unwrap()
     }
 }
+
+fn main() {
+    let mut stack = Stack::default();
+    stack.push(1);
+    println!("{}", stack.peek());
+    stack.pop();
+    stack.pop();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::Stack;
+    use std::convert::TryInto;
+
+    #[test]
+    fn test_stack() {
+        let mut stack = Stack::default();
+        stack.push(1);
+        assert_eq!(stack.peek(), 1);
+        println!("{} popped from stack", stack.pop());
+        assert_ne!(stack.peek(), 1);
+        for i in 0..stack.size {
+            stack.push(i.try_into().unwrap());
+        }
+        assert_eq!(stack.peek(), stack.size - 1);
+    }
+}
