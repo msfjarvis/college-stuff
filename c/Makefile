@@ -6,4 +6,7 @@ format:
 
 build:	$(addsuffix .out, $(basename $(wildcard *.c)))
 
+clean:
+	rm -f *.out
+
 .DEFAULT_GOAL := build
