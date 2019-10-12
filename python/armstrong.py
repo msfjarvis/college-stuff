@@ -1,7 +1,7 @@
 def is_arm(num: int) -> bool:
     sumz = 0
     for i in str(num):
-        sumz += int(i)**3
+        sumz += int(i) ** 3
     return sumz == num
 
 
