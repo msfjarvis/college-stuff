@@ -24,7 +24,7 @@ void insertBeginning(LL *l, int ele) {
 }
 
 void insertEnd(LL *l, int ele) {
-    node *newnode, *p;
+    node *newnode;
     newnode = (node *)malloc(sizeof(node));
     newnode->data = ele;
 
@@ -84,7 +84,7 @@ void display(LL *l) {
 
 int main() {
     LL l1;
-    int ch, ele, pos;
+    int ch, ele;
     l1.last = NULL;
     while (1) {
         printf("1: InsertBeginning\n2: InsertEnd\n3: DeleteBeginning\n4: "

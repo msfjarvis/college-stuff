@@ -10,6 +10,18 @@ typedef struct {
     node *start;
 } LL;
 
+int count(LL *l) {
+    node *p;
+    int c = 0;
+    p = l->start;
+
+    while (p != NULL) {
+        c++;
+        p = p->next;
+    }
+    return c;
+}
+
 void insertBeginning(LL *l, int ele) {
     node *newnode;
     newnode = (node *)malloc(sizeof(node));
@@ -98,18 +110,6 @@ int deletePos(LL *l, int pos) {
     return p->data;
 }
 
-int count(LL *l) {
-    node *p;
-    int c = 0;
-    p = l->start;
-
-    while (p != NULL) {
-        c++;
-        p = p->next;
-    }
-    return c;
-}
-
 void deleteElement(LL *l, int ele) {
     node *p, *q;
     if (l->start->data == ele) {
@@ -148,7 +148,7 @@ int search(LL *l, int ele) {
 
 void sort(LL *l) {
     int t;
-    node *i, *j, *p, *q;
+    node *i, *j;
 
     for (i = l->start; i->next != NULL; i = i->next) {
         for (j = l->start; j->next != NULL; j = j->next) {

@@ -27,7 +27,7 @@ void insertBeginning(LL *l, int ele) {
 }
 
 void insertEnd(LL *l, int ele) {
-    node *newnode, *p;
+    node *newnode;
     newnode = (node *)malloc(sizeof(node));
     newnode->data = ele;
     newnode->next = NULL;
@@ -60,7 +60,7 @@ int deleteBeginning(LL *l) {
 }
 
 int deleteEnd(LL *l) {
-    node *p, *q;
+    node *p;
     if (l->last == NULL) {
         return -1;
     }
@@ -91,7 +91,7 @@ void display(LL *l) {
 
 int main() {
     LL l1;
-    int ch, ele, pos;
+    int ch, ele;
     l1.start = NULL;
     l1.last = NULL;
     while (1) {
