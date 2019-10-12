@@ -1,12 +1,14 @@
 // C program to find length of a string using recursion
 #include <stdio.h>
 
+#define MAX_LEN 100
+
 int string_length(char *);
 
 int main() {
-    char s[100];
+    char s[MAX_LEN];
 
-    gets(s);
+    fgets(s, MAX_LEN, stdin);
 
     printf("Length = %d\n", string_length(s));
 

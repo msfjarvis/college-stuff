@@ -5,7 +5,6 @@ long factorial(int);
 
 int main() {
     int number;
-    long fact = 1;
 
     printf("Enter a number to calculate its factorial\n");
     scanf("%d", &number);
