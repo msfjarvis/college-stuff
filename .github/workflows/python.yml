@@ -21,4 +21,4 @@ jobs:
       with:
         python-version: ${{ matrix.python }}
     - uses: actions/checkout@master
-    - run: cd python && python tests.py
+    - run: cd python && pip install -r requirements.txt && black --check *.py && python tests.py
