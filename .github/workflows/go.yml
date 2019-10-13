@@ -21,4 +21,6 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
       - uses: actions/checkout@master
-      - run: cd go && go test .
+      - run: |
+            cd go
+            go test .

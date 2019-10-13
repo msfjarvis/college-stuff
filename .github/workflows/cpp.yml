@@ -17,4 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - run: cd cpp && make
+      - run: |
+            cd cpp
+            make
