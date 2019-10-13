@@ -12,7 +12,7 @@ class Student {
     }
 
     void display() {
-        cout << "Age : " << this -> age << " RollNumber : " << this -> rollNumber << endl;
+        cout << "Age : " << this -> age << " AgeRef : " << this -> ageRef << " RollNumber : " << this -> rollNumber << endl;
     }
 };
 
