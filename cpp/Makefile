@@ -2,7 +2,7 @@ format:
 	clang-format -i *.cpp conio.h
 
 %.out: %.cpp
-	clang++ -Wall -Werror $< -o $@
+	clang++ -Wall -Werror $< -o $@ -I $(shell pwd)/../common
 
 build:	$(addsuffix .out, $(basename $(wildcard *.cpp)))
 
