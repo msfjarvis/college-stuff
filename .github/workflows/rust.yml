@@ -21,4 +21,6 @@ jobs:
       with:
         rust-version: ${{ matrix.rust }}
     - uses: actions/checkout@master
-    - run: cd rust && cargo test
+    - run: |
+          cd rust
+          cargo test
