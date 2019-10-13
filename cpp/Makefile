@@ -1,5 +1,5 @@
 format:
-	clang-format -i stack-linked-list.cpp conio.h
+	clang-format -i *.cpp conio.h
 
 %.out: %.cpp
 	clang++ -Wall -Werror $< -o $@
