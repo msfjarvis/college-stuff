@@ -1,10 +1,14 @@
-def is_arm(num: int) -> bool:
-    sumz = 0
-    for i in str(num):
-        sumz += int(i) ** 3
-    return sumz == num
 
+num = int(input("Enter a number to check if its armstrong or not: "))
 
-number = int(input("Enter a number "))
-if is_arm(number):
-    print(number, "is an armstrong number")
+def givePower(x,y):
+    return x**y
+
+list_num = [int(x) for x in str(num)]
+
+cube_list = [givePower(x,len(str(num))) for x in list_num]
+
+if sum(cube_list) == num:
+    print("Given number is an Armstrong number")
+else:
+    print("Given number is not an Armstrong number")
