@@ -31,7 +31,7 @@ class Student {
         this -> age = age;
     }
 
-    void setRno() {
+    void setRno(int rno) {
         this -> rno = rno;
     }
 };
