@@ -1,4 +1,4 @@
-//Palindrome program in Java
+//Palindrome program in Java; Palindrome number is a number that remains the same when its digits are reversed. Like 16461, for example, it is "symmetrical".
 import java.util.*;
  
 class Palindrome
