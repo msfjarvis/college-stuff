@@ -1,5 +1,5 @@
 format:
-	clang-format -i *.c conio.h
+	clang-format -i *.c
 
 %.out: %.c
 	clang -Wall -Werror $< -o $@ -I $(shell pwd)/../common
