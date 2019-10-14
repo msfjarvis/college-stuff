@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-java@v1
-       with:
+        with:
           java-version: ${{ matrix.java }}
           architecture: x64
       - run: |
