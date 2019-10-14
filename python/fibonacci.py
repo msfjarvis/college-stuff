@@ -1,11 +1,11 @@
-def fibo(n: int) -> int:
+def fibo(n: int) -> list:
+    fin_lis = []
     if n <= 1:
-        return 1
-    if n == 2:
-        return 1
-    return fibo(n - 1) + fibo(n - 2)
-
-
-num = int(input("Enter number of fibonacci to print "))
-for i in range(1, num + 1):
-    print(fibo(i))
+        final_lis = [1]
+    elif n == 2:
+        final_lis = [1, 1]
+    else:
+        fin_lis = [1, 1]
+        while len(fin_lis) != n:
+            fin_lis.append(fin_lis[-1] + fin_lis[-2])
+    return fin_lis
