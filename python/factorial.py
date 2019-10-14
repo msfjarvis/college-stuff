@@ -4,5 +4,10 @@ def facto(n: int) -> int:
     return n * facto(n - 1)
 
 
-num = int(input("Enter the number to find factorial of "))
-print(f"{num}! = {facto(num)}")
+def main():
+    num = int(input("Enter a number to find factorial of "))
+    print(f"{num}! = {facto(num)}")
+
+
+if __name__ == "__main__":
+    main()
