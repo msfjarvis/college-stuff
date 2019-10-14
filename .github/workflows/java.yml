@@ -1,4 +1,4 @@
-name: JAVA
+name: Java
 on:
   push:
     paths:
@@ -14,6 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
+        java: [1.8, 10, 11, 12]
 
     steps:
       - uses: actions/checkout@master
@@ -21,5 +22,8 @@ jobs:
        with:
           java-version: ${{ matrix.java }}
           architecture: x64
-- run: cd java && java -cp  *.java
+      - run: |
+            cd java
+            ./gradlew spotlessCheck
+            ./gradlew build
 
