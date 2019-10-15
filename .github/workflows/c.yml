@@ -19,4 +19,6 @@ jobs:
       - uses: actions/checkout@master
       - run: |
             cd c
+            mkdir out && cd out
+            cmake ../
             make
