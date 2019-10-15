@@ -1,32 +1,46 @@
 // Addition of two matrix in C
 #include <stdio.h>
 
+#define M 10
+#define N 10
+
+void add_matrices(int m1[M][N], int m2[M][N], int res[M][N]);
+
 int main() {
-    int m, n, c, d, first[10][10], second[10][10], sum[10][10];
+    int first[M][N], second[M][N], sum[M][N], idx = 0;
 
-    printf("Enter the number of rows and columns of matrix\n");
-    scanf("%d%d", &m, &n);
     printf("Enter the elements of first matrix\n");
-
-    for (c = 0; c < m; c++)
-        for (d = 0; d < n; d++)
-            scanf("%d", &first[c][d]);
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            first[i][j] = idx;
+            idx++;
+        }
+    }
 
     printf("Enter the elements of second matrix\n");
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            second[i][j] = idx;
+            idx++;
+        }
+    }
 
-    for (c = 0; c < m; c++)
-        for (d = 0; d < n; d++)
-            scanf("%d", &second[c][d]);
+    add_matrices(first, second, sum);
 
     printf("Sum of entered matrices:-\n");
-
-    for (c = 0; c < m; c++) {
-        for (d = 0; d < n; d++) {
-            sum[c][d] = first[c][d] + second[c][d];
-            printf("%d\t", sum[c][d]);
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("sum[%d][%d] = %d\n", i, j, sum[i][j]);
         }
-        printf("\n");
     }
 
     return 0;
+}
+
+void add_matrices(int m1[M][N], int m2[M][N], int res[M][N]) {
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            res[i][j] = m1[i][j] + m2[i][j];
+        }
+    }
 }
