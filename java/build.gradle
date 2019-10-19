@@ -27,3 +27,9 @@ spotless {
     indentWithSpaces(4)
   }
 }
+
+tasks {
+  wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+  }
+}
