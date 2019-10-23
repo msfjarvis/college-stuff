@@ -1,0 +1,5 @@
+/*
+ * Copyright © 2018-2019 Harsh Shandilya <msfjarvis@gmail.com>. All Rights Reserved.
+ * SPDX-License-Identifier: MIT
+ */
+package collegestuff
