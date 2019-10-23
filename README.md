@@ -9,3 +9,4 @@ Implemented languages:
 - [![C tests](https://github.com/msfjarvis/college-stuff/workflows/C/badge.svg)](https://github.com/msfjarvis/college-stuff/actions)
 - [![CPP tests](https://github.com/msfjarvis/college-stuff/workflows/CPP/badge.svg)](https://github.com/msfjarvis/college-stuff/actions)
 - [![Java tests](https://github.com/msfjarvis/college-stuff/workflows/Java/badge.svg)](https://github.com/msfjarvis/college-stuff/actions)
+- [![Kotlin tests](https://github.com/msfjarvis/college-stuff/workflows/Kotlin/badge.svg)](https://github.com/msfjarvis/college-stuff/actions)

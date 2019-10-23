@@ -1,0 +1,29 @@
+name: Kotlin
+on:
+  push:
+    paths:
+      - 'kotlin/**'
+      - '.github/workflows/kotlin.yml'
+  pull_request:
+    paths:
+      - 'kotlin/**'
+      - '.github/workflows/kotlin.yml'
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        java: [1.8, 10, 11, 12]
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+          architecture: x64
+      - run: |
+            cd java
+            ./gradlew spotlessCheck
+            ./gradlew test
+            ./gradlew build
