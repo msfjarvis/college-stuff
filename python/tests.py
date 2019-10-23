@@ -1,6 +1,6 @@
 import unittest
 from stack import Stack
-import armstrong, dectobin, factorial, fibonacci, palindrome
+import armstrong, dectobin, factorial, fibonacci, palindrome, calc
 
 
 class StackTest(unittest.TestCase):
@@ -46,6 +46,36 @@ class PalindromeTest(unittest.TestCase):
     def test_fibonacci(self):
         self.assertEqual(palindrome.palindrome("6969"), False)
         self.assertEqual(palindrome.palindrome("Malayalam"), True)
+
+
+class TestCalc(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(calc.add(10, 5), 15)
+        self.assertEqual(calc.add(-1, 1), 0)
+        self.assertEqual(calc.add(-1, -1), -2)
+
+    def test_subtract(self):
+        self.assertEqual(calc.subtract(10, 5), 5)
+        self.assertEqual(calc.subtract(-1, 1), -2)
+        self.assertEqual(calc.subtract(-1, -1), 0)
+
+    def test_multiply(self):
+        self.assertEqual(calc.multiply(10, 5), 50)
+        self.assertEqual(calc.multiply(-1, 1), -1)
+        self.assertEqual(calc.multiply(-1, -1), 1)
+
+    def test_divide(self):
+        self.assertEqual(calc.divide(10, 5), 2)
+        self.assertEqual(calc.divide(-1, 1), -1)
+        self.assertEqual(calc.divide(-1, -1), 1)
+        self.assertEqual(calc.divide(5, 2), 2.5)
+
+        with self.assertRaises(ValueError):
+            calc.divide(10, 0)
+
+    def test_facto(self):
+        self.assertEqual(calc.facto(5), 120)
+        self.assertEqual(calc.facto(10), 3628800)
 
 
 if __name__ == "__main__":
