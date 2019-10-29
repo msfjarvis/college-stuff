@@ -23,7 +23,7 @@ jobs:
           java-version: ${{ matrix.java }}
           architecture: x64
       - run: |
-            cd java
+            cd kotlin
             ./gradlew spotlessCheck
             ./gradlew test
             ./gradlew build
