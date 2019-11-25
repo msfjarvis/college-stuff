@@ -6,13 +6,14 @@ class Student {
     const int rollNumber;
     int &ageRef;
 
-    public:
-    Student(int age, int rno) : age(age), rollNumber(rno), ageRef(this -> age) {
+  public:
+    Student(int age, int rno) : age(age), rollNumber(rno), ageRef(this->age) {
         cout << "Constructor called" << endl;
     }
 
     void display() {
-        cout << "Age : " << this -> age << " AgeRef : " << this -> ageRef << " RollNumber : " << this -> rollNumber << endl;
+        cout << "Age : " << this->age << " AgeRef : " << this->ageRef
+             << " RollNumber : " << this->rollNumber << endl;
     }
 };
 

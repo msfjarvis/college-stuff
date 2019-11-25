@@ -2,38 +2,29 @@
 using namespace std;
 
 /*
-    Only functions that do not modify the property can be set as const functions.
-    Const objects can only call const functions.
+    Only functions that do not modify the property can be set as const
+   functions. Const objects can only call const functions.
  */
 
 class Student {
     int age;
     int rno;
 
-    public:
-
+  public:
     Student(int age, int rno) {
-        this -> age = age;
-        this -> rno = rno;
+        this->age = age;
+        this->rno = rno;
     }
 
-    int getAge() const {
-        return age;
-    }
+    int getAge() const { return age; }
 
-    int getRno() const {
-        return rno;
-    }
+    int getRno() const { return rno; }
 
-// Calling these will show error
+    // Calling these will show error
 
-    void setAge(int age) {
-        this -> age = age;
-    }
+    void setAge(int age) { this->age = age; }
 
-    void setRno(int rno) {
-        this -> rno = rno;
-    }
+    void setRno(int rno) { this->rno = rno; }
 };
 
 int main() {

@@ -5,41 +5,43 @@ class Fraction {
     int numerator;
     int denominator;
 
-    public:
-
+  public:
     Fraction(int num, int den) {
         numerator = num;
         denominator = den;
     }
 
     void display() {
-        cout << "Numerator : " << numerator << " Denominator : " << denominator << endl; 
+        cout << "Numerator : " << numerator << " Denominator : " << denominator
+             << endl;
     }
 
     Fraction operator+(Fraction const &f) {
         int lcm = denominator * f.denominator;
-        Fraction fnew(numerator*f.denominator + f.numerator*denominator, lcm);
+        Fraction fnew(numerator * f.denominator + f.numerator * denominator,
+                      lcm);
         fnew.simplify();
-        return fnew; 
+        return fnew;
     }
 
     Fraction operator-(Fraction const &f) {
         int lcm = denominator * f.denominator;
-        Fraction fnew(numerator*f.denominator - f.numerator*denominator, lcm);
+        Fraction fnew(numerator * f.denominator - f.numerator * denominator,
+                      lcm);
         fnew.simplify();
-        return fnew; 
+        return fnew;
     }
 
     Fraction operator*(Fraction const &f) {
-        Fraction fnew(numerator*f.numerator, denominator*f.denominator);
+        Fraction fnew(numerator * f.numerator, denominator * f.denominator);
         fnew.simplify();
-        return fnew; 
+        return fnew;
     }
 
     Fraction operator/(Fraction const &f) {
-        Fraction fnew(numerator*f.denominator, denominator*f.numerator);
+        Fraction fnew(numerator * f.denominator, denominator * f.numerator);
         fnew.simplify();
-        return fnew; 
+        return fnew;
     }
 
     bool operator==(Fraction const &f) {
@@ -48,19 +50,19 @@ class Fraction {
         return false;
     }
 
-    //Pre-Increment
+    // Pre-Increment
     /*
-        Here we are returning by reference. Returning by reference helps it as now the function can also
-        be used as an lvalue. Noice.
+        Here we are returning by reference. Returning by reference helps it as
+       now the function can also be used as an lvalue. Noice.
      */
-    Fraction& operator++() {
+    Fraction &operator++() {
         numerator += denominator;
         simplify();
         return *this;
     }
 
-    //Post increment
-    //Nesting of PI operator is not allowed
+    // Post increment
+    // Nesting of PI operator is not allowed
     Fraction operator++(int) {
         Fraction fnew(numerator, denominator);
         numerator += denominator;
@@ -68,20 +70,20 @@ class Fraction {
         return fnew;
     }
 
-    Fraction& operator+=(Fraction const &f) {
+    Fraction &operator+=(Fraction const &f) {
         int lcm = denominator * f.denominator;
-        numerator = numerator*f.denominator + f.numerator*denominator;
-        denominator =  lcm;
+        numerator = numerator * f.denominator + f.numerator * denominator;
+        denominator = lcm;
         simplify();
-        return *this;          
+        return *this;
     }
 
     void simplify() {
         int m = min(numerator, denominator);
         for (int i = 2; i <= m; i++) {
             if (numerator % i == 0 && denominator % i == 0) {
-                this -> numerator /= i;
-                this -> denominator /= i;
+                this->numerator /= i;
+                this->denominator /= i;
                 i--;
             }
         }
